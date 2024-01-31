@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Web Page</title>
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header, footer {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: #ff0000;
+            margin-bottom: 10px;
+        }
+        nav {
+            background-color: #333;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 1em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Responsive Website</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis dicta id iusto repellendus cupiditate, quos est doloremque consequatur sint corrupti doloribus possimus voluptatibus. Esse nostrum provident qui reiciendis ipsam ad?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex illum vero sequi laboriosam ipsam totam rem. Aperiam doloremque ad facere sapiente quis ducimus voluptatum, nihil reiciendis! Distinctio blanditiis mollitia cum.</p>
+            <img src="images/1.jpg" style="width: 100%;" alt="homeimg">
+        </section>
+
+        <section id="about">
+            <h2>About</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, beatae facere. Beatae culpa, ab atque quidem maiores saepe in dignissimos ducimus laborum sed sint laudantium suscipit ullam rerum corrupti veritatis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam voluptates facilis non suscipit, ea consequatur culpa exercitationem reiciendis sit dignissimos, corporis dolor minima cumque perferendis magnam eligendi molestiae. Aliquid, sint?</p>
+            <img src="images/2.jpg" style="width: 100%;" alt="aboutimg">
+        </section>
+
+        <section id="services">
+            <h2>Services</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos ea pariatur laborum nesciunt magni repudiandae tempora! Natus temporibus cumque corrupti. Sed, quasi atque impedit beatae fugiat quaerat nihil et aut? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, quas nostrum qui recusandae ullam architecto blanditiis velit commodi amet quam sapiente, numquam dolores nihil ipsum sequi provident voluptate magni explicabo?</p>
+            <img src="images/3.jpg" style="width: 100%;" alt="serviceimg">
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia animi alias rerum temporibus eaque? Natus officiis, facere, corrupti exercitationem harum officia aliquid dicta eius incidunt enim dolorum minus tempora culpa. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto cumque tempore omnis dignissimos impedit pariatur dolorum doloremque, deserunt quam odio porro quia quae, nesciunt eaque recusandae vitae eius nemo ratione.</p>
+            <img src="images/5.jpg" alt="contactimg" style="width: 1370px;">
+        </section>
+    </main>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+        
+                <label for="mobile">Mobile Number:</label>
+                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
+        
+                <label>Gender:</label>
+                <div>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+        
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+        
+                    <input type="radio" id="others" name="gender" value="others">
+                    <label for="others">Others</label>
+                </div>
+        
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+        
+                <button type="button" onclick="validateForm()">Submit</button>
+            </form>
+            <p class="error-message" id="errorMessage"></p>
+        </section>
+        
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script>
+            function validateForm() {
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var mobile = $("#mobile").val();
+                var comment = $("#comment").val();
+        
+                if (name === "" || email === "" || mobile === "" || comment === "") {
+                    $("#errorMessage").text("Please fill out all fields.");
+                } else if (!isValidEmail(email)) {
+                    $("#errorMessage").text("Please enter a valid email address.");
+                } else if (!isValidMobileNumber(mobile)) {
+                    $("#errorMessage").text("Please enter a valid 10-digit mobile number.");
+                } else {
+                    $("#errorMessage").text("");
+                }
+            }
+        
+            function isValidEmail(email) {
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+        function isValidMobileNumber(mobile) {
+            var mobileRegex = /^[0-9]{10}$/;
+            return mobileRegex.test(mobile);
+        }
+        </script>
+        <footer>
+            <p style="float: left; font-size: 20px;">Referance:<a href="https://www.w3schools.com/">W3School</a></p>
+            <p>&copy; 2024 Your Website. All rights reserved.</p>
+        </footer>
+        
+</body>
+</html>
